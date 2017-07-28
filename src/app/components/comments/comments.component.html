@@ -1,0 +1,22 @@
+<div class="container">
+
+  <!-- user controls -->
+  <!-- <app-pagination-controller (submit)="updatePagination($event)"></app-pagination-controller> -->
+  <app-pagination-controller [setConfig]="config"></app-pagination-controller>
+
+  <!-- show comments -->
+  <div class="row">
+    <div *ngFor="let post of posts | paginate: config; let i = index" class="desktop-3 tablet-6 mboile-12">
+    <!-- <div *ngFor="let post of posts; let i = index" class="desktop-3 tablet-6 mboile-12"> -->
+      <h4>{{post.name}}</h4>
+      <a href="tel:{{post.email}}" title="{{post.email}}"><i class="fa fa-envelope-o" aria-hidden="true"></i> {{post.email}}</a>
+      <p>{{post.body}}</p>
+    </div>
+  </div><!-- END comments -->
+
+  <!-- pagination -->
+  <div class="row">
+    <app-pagination class="desktop-12" [setConfig]="config"></app-pagination>
+  </div><!-- END pagination -->
+
+</div> <!-- END container -->

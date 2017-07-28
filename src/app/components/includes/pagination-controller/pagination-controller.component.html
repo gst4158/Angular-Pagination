@@ -1,0 +1,20 @@
+<!-- user controls -->
+<form class="row" (submit)="updatePagination(itemsPerPage.value, maxSize.value)">
+  <div class="form-group row desktop-12">
+    <div class="desktop-6">
+      <label for="itemsPerPage">Post per page:</label>
+      <input #itemsPerPage type="number" min="5" max="15" class="form-control" id="itemsPerPage" name="itemsPerPage" value="{{setConfig.itemsPerPage}}">
+      <span class="small">Please enter a number between 5 and 15</span>
+    </div>
+
+    <div class="desktop-6">
+      <label for="maxSize">Number of paginational pages:</label>
+      <input #maxSize type="number" min="5" max="15" class="form-control" id="maxSize" name="maxSize" value="{{setConfig.maxSize}}">
+      <span class="small">Please enter a number between 5 and 15</span>
+    </div>
+
+    <div class="desktop-6">
+      <button type="submit" class="btn btn-primary float-left margin-top-20">Submit</button>
+    </div>
+  </div>
+</form>

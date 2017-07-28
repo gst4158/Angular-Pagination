@@ -1,0 +1,25 @@
+// !compileOnSave
+// compileOnSave: false
+//==========================================================================//
+// Styles that alter any text related elements/attributes
+//==========================================================================//
+h1, h2, h3, h4, h5, h6 {
+    font-weight: $font-weight-bold;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+a {
+    &:hover,
+    &:hover i {
+      color: darken($brand-primary, 15%);
+    }
+}
+
+code {
+    p {
+        color: darken($brand-primary, 10%);
+    }
+}

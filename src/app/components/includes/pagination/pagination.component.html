@@ -1,0 +1,13 @@
+<pagination-controls class="desktop-12"
+  [id]="setConfig.id"
+  [maxSize]="setConfig.maxSize"
+  [directionLinks]="1"
+  [autoHide]="0"
+  [previousLabel]="setConfig.previousLabel"
+  [nextLabel]="setConfig.nextLabel"
+  [screenReaderPaginationLabel]="setConfig.screenReaderPaginationLabel"
+  [screenReaderPageLabel]="setConfig.screenReaderPageLabel"
+  [screenReaderCurrentLabel]="setConfig.screenReaderCurrentLabel"
+  (pageChange)="onPageChange($event)"
+ >
+</pagination-controls>
