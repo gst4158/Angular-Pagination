@@ -1,0 +1,52 @@
+// !compileOnSave
+// compileOnSave: false
+//==========================================================================//
+// Decorations code
+// Styles designed to decorate markup
+//==========================================================================//
+
+/**
+* Displays text vertically aligned with solid line
+*/
+@mixin bg-strike($color) {
+
+    display: block;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+
+    > span {
+
+        position: relative;
+        display: inline-block;
+
+        &:before,
+        &:after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            width: 9999px;
+            height: 1px;
+            background: $color;
+        }
+
+        &:before {
+            right: 100%;
+            margin-right: 15px;
+        }
+
+        &:after {
+            left: 100%;
+            margin-left: 15px;
+        }
+    }
+}
+.txt-strike {
+  @include bg-strike($black);
+  &.align-left {
+    text-align: left;
+  }
+  &.align-right {
+    text-align: right;
+  }
+}

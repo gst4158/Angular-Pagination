@@ -9452,6 +9452,35 @@ body[data-device="mobile"] .carousel .carousel-indicators li.active {
 pre {
   width: 100%; }
 
+/**
+* Displays text vertically aligned with solid line
+*/
+.txt-strike {
+  display: block;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap; }
+  .txt-strike > span {
+    position: relative;
+    display: inline-block; }
+    .txt-strike > span:before, .txt-strike > span:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 9999px;
+      height: 1px;
+      background: #292b2c; }
+    .txt-strike > span:before {
+      right: 100%;
+      margin-right: 15px; }
+    .txt-strike > span:after {
+      left: 100%;
+      margin-left: 15px; }
+  .txt-strike.align-left {
+    text-align: left; }
+  .txt-strike.align-right {
+    text-align: right; }
+
 .btn-inline-submit {
   margin-top: 18px; }
 
@@ -9466,6 +9495,10 @@ pre {
 @media screen and (max-width: 599px) {
   .form-inline .input-group.mobile-12 {
     padding: 0; } }
+
+/* customizations */
+app-filter .input-group-addon {
+  min-width: 100px; }
 
 .row {
   margin-bottom: 20px; }
@@ -9662,6 +9695,15 @@ small, .small {
 /* override oswald typeface for form interactions */
 label, input, textarea, select, textarea {
   font-family: "Open Sans"; }
+
+.txt-align-left {
+  text-align: left !important; }
+
+.txt-align-center {
+  text-align: center !important; }
+
+.txt-align-right {
+  text-align: right !important; }
 
 .flex-align-items-center {
   align-items: center !important; }

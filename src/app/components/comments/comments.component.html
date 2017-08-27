@@ -1,21 +1,49 @@
 <div class="container">
 
-  <!-- user controls -->
-  <app-pagination-controller [setConfig]="config"></app-pagination-controller>
+  <!-- orderby controls -->
+  <app-filter [filterArray]="filtering"></app-filter>
+
+  <!-- pagination -->
+  <div class="row desktop-hide">
+    <app-pagination class="desktop-12 txt-align-center" [setConfig]="config"></app-pagination>
+  </div><!-- END pagination -->
 
   <!-- show comments -->
   <div class="row">
-    <div *ngFor="let post of posts | paginate: config; let i = index" class="desktop-3 tablet-6 mboile-12">
+    <div *ngFor="let post of posts | orderBy: filtering.orderBy | filterBy: [filtering.filterBy.keys] : filtering.filterBy.value | paginate: config; let i = index" class="desktop-3 tablet-6 mobile-12 desktop-margin-top-0 mobile-margin-top-20">
     <!-- <div *ngFor="let post of posts; let i = index" class="desktop-3 tablet-6 mboile-12"> -->
-      <h4>{{post.name}}</h4>
-      <a href="tel:{{post.email}}" title="{{post.email}}"><i class="fa fa-envelope-o" aria-hidden="true"></i> {{post.email}}</a>
-      <p>{{post.body}}</p>
+
+    <span class="small">User:</span>
+      <p class="txt-opensans-bold margin-bottom-0">{{post.name}}</p>
+      <ul>
+        <li>
+          <a href="tel:{{post.email}}" title="{{post.email}}"><i class="fa fa-envelope-o" aria-hidden="true"></i> {{post.email}}</a>
+        </li>
+        <li>
+          <a href="tel:{{post.phone}}" title="{{post.phone}}"><i class="fa fa-phone" aria-hidden="true"></i> {{post.phone}}</a>
+        </li>
+        <li>
+          <a href="http://www.google.com/maps/?q={{post.address.geo.lat}},{{post.address.geo.lng}}" title="{{post.address.street}}, {{post.address.suite}}, {{post.address.city}}, {{post.address.zipcode}}" target="_blank">
+            <i class="fa fa-address-card-o" aria-hidden="true"></i>
+            {{post.address.street}}, {{post.address.suite}}, {{post.address.city}}, {{post.address.zipcode}}
+          </a>
+        </li>
+      </ul>
+
+      <span class="small">Company:</span>
+
+      <p class="txt-opensans-bold margin-bottom-0">{{post.company.name}}</p>
+      <ul>
+        <li>{{post.company.catchPhrase}}</li>
+        <li>{{post.company.bs}}</li>
+      </ul>
     </div>
   </div><!-- END comments -->
 
   <!-- pagination -->
   <div class="row">
-    <app-pagination class="desktop-12" [setConfig]="config"></app-pagination>
-  </div>
+    <app-pagination-controller class="desktop-12" [setConfig]="config"></app-pagination-controller>
+    <app-pagination class="desktop-12 txt-align-center" [setConfig]="config"></app-pagination>
+  </div><!-- END pagination -->
 
 </div> <!-- END container -->

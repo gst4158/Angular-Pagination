@@ -8,8 +8,7 @@ import { Component, Input, } from '@angular/core';
 export class PaginationComponent {
     @Input() setConfig: {currentPage};
 
-    // change pagination number
     onPageChange(number: number) {
-      this.setConfig.currentPage = number;
+      return this.setConfig.currentPage = number;
     }
 }

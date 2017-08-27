@@ -47,9 +47,12 @@ label, input, textarea, select, textarea {
     font-family: $secondary-font;
 }
 
+.txt-align-left {text-align: left !important;}
+.txt-align-center {text-align: center !important;}
+.txt-align-right {text-align: right !important;}
+
 //==========================================================================//
 // Flexbox Overrides
-//
 //==========================================================================//
 .flex-align-items-center {
     align-items: center !important;

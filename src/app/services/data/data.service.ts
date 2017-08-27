@@ -10,7 +10,7 @@ export class DataService {
   ){}
 
   getComments() {
-    return this.http.get('https://jsonplaceholder.typicode.com/comments')
+    return this.http.get('https://jsonplaceholder.typicode.com/users')
       .map( response => response.json() );
   }
 
